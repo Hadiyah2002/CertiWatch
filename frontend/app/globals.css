@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-50 text-gray-900;
+}
+
+/* react-datepicker theme overrides to match the app's rounded-corner,
+   brand-green design instead of the library's default styling. */
+.react-datepicker {
+  font-family: inherit;
+  border-color: #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.react-datepicker__header {
+  background-color: #f9fafb;
+  border-bottom-color: #e5e7eb;
+}
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  background-color: #0b4d3b;
+}
+.react-datepicker__day--selected:hover,
+.react-datepicker__day--keyboard-selected:hover {
+  background-color: #0f6b52;
+}
+.react-datepicker__day:hover {
+  border-radius: 4px;
+}
+.react-datepicker-wrapper {
+  display: block;
+  width: 100%;
+}
+
+/* Phones: 16px form text stops iOS Safari zooming in on focus (it zooms
+   whenever a focused field's font is under 16px). Needs !important to
+   beat Tailwind's text-sm utility class on the same elements. */
+@media (max-width: 639px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}

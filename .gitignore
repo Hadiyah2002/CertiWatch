@@ -1,0 +1,14 @@
+# Secrets and local settings — never commit these.
+.env
+.env.local
+!.env.example
+
+# Dependencies, virtualenvs and build output (reinstalled/rebuilt locally).
+node_modules/
+.next/
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.tsbuildinfo
+db.sqlite3
